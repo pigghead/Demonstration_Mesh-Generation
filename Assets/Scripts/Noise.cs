@@ -7,18 +7,34 @@ public static class Noise
     // Octaves - layering of noises to produce terrain
     // Lacunarity - controls frequency of octaves (higher lacunarity = less influence)
     // Persistance - controls the decrease in amplitudes (makes for smoother declines/inclines)
-    public static float[,] GenerateNoiseMap(int width, int height, float scale, int octaves, float persistanceVal, float lacunarityVal)
+    public static float[,] GenerateNoiseMap(int width, int height, int seed, float scale, int octaves, float persistanceVal, float lacunarityVal, Vector2 offset)
     {
+        float[,] noiseMap = new float[width, height];
+
+        System.Random prng = new System.Random(seed);
+        Vector2[] octaveOffsets = new Vector2[octaves];
+
+        for (int i = 0; i < octaves; i++)
+        {
+            float offsetX = prng.Next(-100000, 100000) + offset.x;
+            float offsetY = prng.Next(-100000, 100000) + offset.y;
+
+            octaveOffsets[i] = new Vector2(offsetX, offsetY);
+        }
+
         // Prevent a division by zero error 
         if (scale <= 0)
         {
-            scale = 0.0025f;
+            scale = 0.0001f;
         }
 
         float maxNoiseHeight = float.MinValue;
         float minNoiseHeight = float.MaxValue;
 
-        float[,] noiseMap = new float[width, height];
+        float halfWidth = width / 2f;
+        float halfHeight = height / 2f;
+
+        
 
         // Looping through 2d float
         for (int y = 0; y < height; y++)
@@ -32,8 +48,8 @@ public static class Noise
 
                 for (int i = 0; i < octaves; i++)
                 {
-                    float tempX = x / scale * frequency;
-                    float tempY = y / scale * frequency;
+                    float tempX = (x - halfWidth) / scale * frequency + octaveOffsets[i].x;
+                    float tempY = (y - halfHeight) / scale * frequency + octaveOffsets[i].y;
 
                     // Perlin noise is gradual noise change (smoother in a sense)
                     float perlinVal = Mathf.PerlinNoise(tempX, tempY) * 2 - 1;
@@ -56,11 +72,11 @@ public static class Noise
             }
         }
 
-        for (int x = 0; x < height; x++)
+        for (int y = 0; y < height; y++)
         {
-            for (int y = 0; y < width; y++)
+            for (int x = 0; x < width; x++)
             {
-                // STUBBED 4:26 PM
+                noiseMap[x, y] = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight, noiseMap[x,y]);
             }
         }
 
