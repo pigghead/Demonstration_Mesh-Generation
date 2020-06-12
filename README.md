@@ -9,3 +9,8 @@ Would like to create more complex shapes.
 
 # Terrain Generation
 Using Perlin Noise and other cool maths (lacunarity, amplitude, octaves), create procedurally generated and interesting terrain. Write up in progress. :)
+
+Here are some pictures of progress
+
+[NoiseMap](https://github.com/pigghead/Demonstration_Mesh-Generation/blob/master/images/DOC_NoiseMap.PNG)
+[ColorMap](https://github.com/pigghead/Demonstration_Mesh-Generation/blob/master/images/DOC_ColorMap.PNG)
