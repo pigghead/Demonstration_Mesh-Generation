@@ -12,5 +12,5 @@ Using Perlin Noise and other cool maths (lacunarity, amplitude, octaves), create
 
 Here are some pictures of progress
 
-[!NoiseMap](https://github.com/pigghead/Demonstration_Mesh-Generation/blob/master/images/DOC_NoiseMap.PNG)
-[!ColorMap](https://github.com/pigghead/Demonstration_Mesh-Generation/blob/master/images/DOC_ColorMap.PNG)
+![NoiseMap](https://github.com/pigghead/Demonstration_Mesh-Generation/blob/master/images/DOC_NoiseMap.PNG)
+![ColorMap](https://github.com/pigghead/Demonstration_Mesh-Generation/blob/master/images/DOC_ColorMap.PNG)
