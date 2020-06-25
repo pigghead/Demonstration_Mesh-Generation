@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\MeshGenerator.cs" />
     <Compile Include="Assets\Scripts\Noise.cs" />
     <Compile Include="Assets\Scripts\ProceduralCube.cs" />
+    <Compile Include="Assets\Scripts\TerrainMeshGenerator.cs" />
     <Compile Include="Assets\Scripts\TextureGenerator.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Work/Documents/Demonstration_Mesh Generation/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

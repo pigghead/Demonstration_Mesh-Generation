@@ -31,12 +31,12 @@ public static class Noise
         float maxNoiseHeight = float.MinValue;
         float minNoiseHeight = float.MaxValue;
 
+        // use these to find the center of the noise map/texture
         float halfWidth = width / 2f;
         float halfHeight = height / 2f;
 
-        
 
-        // Looping through 2d float
+        // Looping through 2d float array
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
