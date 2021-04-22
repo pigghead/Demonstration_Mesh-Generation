@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent (typeof(MeshFilter), typeof(MeshRenderer))]
+
+// Attach this to an object with a MeshFilter and MeshRenderer component to create a cube
 public class ProceduralCube : MonoBehaviour
 {
     Mesh mesh;
@@ -11,8 +13,8 @@ public class ProceduralCube : MonoBehaviour
 
     void Awake()
     {
+        // Grab the mesh filter attached to our object
         mesh = GetComponent<MeshFilter>().mesh;
-        
     }
 
     void Start()

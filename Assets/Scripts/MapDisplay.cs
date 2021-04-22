@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MapDisplay : MonoBehaviour
 {
+    // Targets the texture renderer on our plane
     public Renderer textureRenderer;
+    // targets mesh filter + renderer on our mesh
     public MeshFilter meshFilter;
     public MeshRenderer meshRenderer;
 

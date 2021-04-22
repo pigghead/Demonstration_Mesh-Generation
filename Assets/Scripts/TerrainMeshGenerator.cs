@@ -6,6 +6,7 @@ public static class TerrainMeshGenerator
 {
     public static MeshData GenereateTerrainMesh(float[,] heightMap)
     {
+        // Because this is a 2d array, .GetLength() of 0 gets us the row/width, 1 the column/height
         int width = heightMap.GetLength(0);
         int height = heightMap.GetLength(1);
 
